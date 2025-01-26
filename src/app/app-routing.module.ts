@@ -39,6 +39,14 @@ const routes: Routes = [
     path: 'data',
     loadChildren: () => import('./pages/data/data.module').then( m => m.DataPageModule)
   },
+  {
+    path: 'last-ones',
+    loadChildren: () => import('./pages/last-ones/last-ones.module').then( m => m.LastOnesPageModule)
+  },
+  {
+    path: 'create-data',
+    loadChildren: () => import('./pages/create-data/create-data.module').then( m => m.CreateDataPageModule)
+  },
 ];
 
 @NgModule({

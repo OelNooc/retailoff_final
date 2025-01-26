@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Crear Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button value="producto">
+      <ion-label>Producto</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="cliente">
+      <ion-label>Cliente</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="envio">
+      <ion-label>Envio</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="selectedSegment === 'producto'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Agregar Producto</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Nombre Producto</ion-label>
+          <ion-input [(ngModel)]="modelProducto.NOMBRE_PRODUCTO" placeholder="Ej: Televisor"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Capacidad</ion-label>
+          <ion-input [(ngModel)]="modelProducto.CAPACIDAD" placeholder="Ej: 64GB"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Stock</ion-label>
+          <ion-input type="number" [(ngModel)]="modelProducto.STOCK"></ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="agregarProducto()">Agregar Producto</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'cliente'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Agregar Cliente</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Nombre Cliente</ion-label>
+          <ion-input [(ngModel)]="modelCliente.NOMBRE_CLIENTE" placeholder="Ej: Juan Pérez"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="modelCliente.EMAIL" placeholder="Ej: cliente@email.com"></ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="agregarCliente()">Agregar Cliente</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="selectedSegment === 'envio'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Agregar Envío</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Nombre Producto</ion-label>
+          <ion-input [(ngModel)]="modelEnvio.NOMBRE_PRODUCTO" placeholder="Ej: Laptop"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Nombre Cliente</ion-label>
+          <ion-input [(ngModel)]="modelEnvio.NOMBRE_CLIENTE" placeholder="Ej: María López"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Dirección</ion-label>
+          <ion-input [(ngModel)]="modelEnvio.DIRECCION" placeholder="Ej: Calle 123"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Cantidad</ion-label>
+          <ion-input type="number" [(ngModel)]="modelEnvio.CANTIDAD"></ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="agregarEnvio()">Agregar Envío</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

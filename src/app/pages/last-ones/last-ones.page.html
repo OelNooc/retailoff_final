@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Últimos Registros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Últimos Productos</ion-card-title>
+    </ion-card-header>
+    <ion-list *ngIf="productos.length > 0; else noProductos">
+      <ion-item *ngFor="let producto of productos">
+        <ion-label>
+          <h2>{{ producto.NOMBRE_PRODUCTO }}</h2>
+          <p>Capacidad: {{ producto.CAPACIDAD }}</p>
+          <p>Stock: {{ producto.STOCK }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ng-template #noProductos>
+      <p>No hay productos disponibles.</p>
+    </ng-template>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Últimos Envíos</ion-card-title>
+    </ion-card-header>
+    <ion-list *ngIf="envios.length > 0; else noEnvios">
+      <ion-item *ngFor="let envio of envios">
+        <ion-label>
+          <h2>{{ envio.NOMBRE_PRODUCTO }}</h2>
+          <p>Cliente: {{ envio.NOMBRE_CLIENTE }}</p>
+          <p>Dirección: {{ envio.DIRECCION }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ng-template #noEnvios>
+      <p>No hay envíos disponibles.</p>
+    </ng-template>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Últimos Clientes</ion-card-title>
+    </ion-card-header>
+    <ion-list *ngIf="clientes.length > 0; else noClientes">
+      <ion-item *ngFor="let cliente of clientes">
+        <ion-label>
+          <h2>{{ cliente.NOMBRE_CLIENTE }}</h2>
+          <p>Email: {{ cliente.EMAIL }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ng-template #noClientes>
+      <p>No hay clientes disponibles.</p>
+    </ng-template>
+  </ion-card>
+</ion-content>
