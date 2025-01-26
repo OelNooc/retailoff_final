@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'prev-scans',
     loadChildren: () => import('./pages/prev-scans/prev-scans.module').then( m => m.PrevScansPageModule)
   },
+  {
+    path: 'data',
+    loadChildren: () => import('./pages/data/data.module').then( m => m.DataPageModule)
+  },
 ];
 
 @NgModule({
