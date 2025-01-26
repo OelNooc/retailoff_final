@@ -41,7 +41,7 @@ export class LoginPage implements OnInit {
           });
           await toast.present();
 
-          this.router.navigate(['/usuario']);
+          this.router.navigate(['/user']);
         }
       } catch (error: any) {
         const toast = await this.toastController.create({
