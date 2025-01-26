@@ -6,11 +6,15 @@ import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
   selector: 'app-scan',
   templateUrl: './scan.page.html',
   styleUrls: ['./scan.page.scss'],
+  standalone: false
 })
 export class ScanPage {
   scannedResult: string | null = null;
 
   constructor(private barcodeScanner: BarcodeScanner, private browser: InAppBrowser) {}
+
+  ngOnInit() {
+  }
 
   async scanQR() {
     try {

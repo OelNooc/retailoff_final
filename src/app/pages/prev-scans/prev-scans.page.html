@@ -1,13 +1,15 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>prev-scans</ion-title>
+    <ion-title>Escaneos Previos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">prev-scans</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let scan of scans">
+      <ion-label>{{ scan }}</ion-label>
+      <ion-button *ngIf="isURL(scan)" (click)="openInBrowser(scan)">Abrir</ion-button>
+      <ion-button *ngIf="isCoordinate(scan)" (click)="openInMap(scan)">Ver en Mapa</ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
