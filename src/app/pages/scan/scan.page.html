@@ -1,13 +1,17 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>scan</ion-title>
+    <ion-title>Escanear QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">scan</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-button expand="full" (click)="scanQR()">Escanear Código QR</ion-button>
+
+  <ion-list *ngIf="scannedResult">
+    <ion-item>
+      <ion-label>{{ scannedResult }}</ion-label>
+    </ion-item>
+    <ion-button *ngIf="isURL(scannedResult)" (click)="openInBrowser()">Abrir URL</ion-button>
+    <ion-button *ngIf="isCoordinate(scannedResult)" (click)="openInMap()">Ver en Mapa</ion-button>
+  </ion-list>
 </ion-content>
