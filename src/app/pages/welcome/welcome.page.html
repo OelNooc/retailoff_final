@@ -4,10 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">welcome</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding welcome-container">
+  <ion-img src="../../../assets/logo.png" class="logo"></ion-img>
+  <h1>Bienvenido a RetailOff</h1>
+  <p>Regístrate o inicia sesión para comenzar.</p>
+  <ion-button expand="full" routerLink="/register">Registrarse</ion-button>
+  <ion-button expand="full" routerLink="/login" color="secondary">Iniciar Sesión</ion-button>
 </ion-content>
