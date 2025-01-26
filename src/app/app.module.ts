@@ -11,6 +11,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import firebaseConfig from './firebase';
 
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,
@@ -19,7 +21,9 @@ import firebaseConfig from './firebase';
      AngularFireModule.initializeApp(firebaseConfig),
      AngularFireAuthModule
     ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    BarcodeScanner
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

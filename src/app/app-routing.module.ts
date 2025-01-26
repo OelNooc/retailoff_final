@@ -23,6 +23,18 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'user',
+    loadChildren: () => import('./pages/user/user.module').then( m => m.UserPageModule)
+  },
+  {
+    path: 'scan',
+    loadChildren: () => import('./pages/scan/scan.module').then( m => m.ScanPageModule)
+  },
+  {
+    path: 'prev-scans',
+    loadChildren: () => import('./pages/prev-scans/prev-scans.module').then( m => m.PrevScansPageModule)
+  },
 ];
 
 @NgModule({
